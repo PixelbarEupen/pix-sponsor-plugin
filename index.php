@@ -6,67 +6,35 @@
 	Description: Erweitert Wordpress um eine Sponsor-Rubrik, in der einzelne Logos inkl. Verknüpfungen zu deren Websites platziert werden können.
 	Plugin URI: https://github.com/PixelbarEupen/pix-sponsor-plugin
 	Version: 0.1.1
-	
+	GitHub Plugin URI: https://github.com/PixelbarEupen/pix-sponsor-plugin
+	GitHub Access Token: 6ca583973da0e33ee1a6c90c3e4920e6143369ca
 	*/
+
 	
-	
-	/* 	CONFIGURATION */
-	
-	
-		
 	/******************************************************************************************/
 	/************************* DO NOT CHANGE ANYTHING AFTER THIS LINE *************************/
 	
-	include('includes/register.php');
-	include('includes/register-sponsor-post-type.php');
-	include('includes/register-meta-box.php');
-	//include('includes/backend.php');
 	
+	//DEFINE PLUGIN HTTP PATH
+	define('HTTP_PIX_SPONSOR_PATH', plugins_url('pix-sponsor-plugin',dirname(__FILE__)));
 	
-	//THE MAIN FUNCTION
-	function pix_sponsor_func($atts = array('echo' => true, 'bannerplatz' => '')){
-		
-		//create var with defaults
-		$echo = (isset($atts['echo'])) ? $atts['echo'] : true;
-		$platz = (isset($atts['bannerplatz'])) ? $atts['bannerplatz'] : '';
-		
-		$args = array(
-			'post_type'	=>	'banner',
-			'bannerplatz' => $platz,
-			'posts_per_page' => -1
-		);
-		
-		
-		$query_banner = new WP_Query( $args );
-		
-		
-		$output = '<div class=" sponsors">'; //define output var
-		while ( $query_banner->have_posts() ):
-			$query_banner->the_post();
-			
-			$img = wp_get_attachment_image_src(get_post_thumbnail_id(),'medium');
-			
-			$output .= '<div class="column large-3 ">';
-				
-				$value = get_post_meta( get_the_ID(), '_pix_url', true );
-				
-				if($value) { $output .= '<a  href="'.$value.'" title="'.get_the_title().'">'; }
-					$output .= '<img src="'.$img[0].'" alt="'.get_the_title().'" />';
-				if($value) { $output .= '</a>'; }
-			$output .= '</div>';
-			
-		endwhile;
-		$output .= '</div>';
-		wp_reset_postdata();
-		
-		
-		
-		if($echo):
-			echo $output;
-		else:
-			return $output;
-		endif;
-		
-	}
+	//DEFINE PLUGIN UNIX PATH
+	define('UNIX_PIX_SPONSOR_PATH', dirname(__FILE__));
 	
-	?>
+	//INCLUDE USED SCRIPTS AND STYLES
+	include(UNIX_PIX_SPONSOR_PATH.'/library/register/scripts-styles.php');
+
+	//INCLUDE CUSTOM POST TYPE SCRIPT
+	include(UNIX_PIX_SPONSOR_PATH.'/library/register/sponsor-post-type.php');
+
+	//INCLUDE CUSTOM META BOX SCRIPT
+	include(UNIX_PIX_SPONSOR_PATH.'/library/register/meta-boxes.php');
+
+	//INCLUDE BACKEND SCRIPT
+	include(UNIX_PIX_SPONSOR_PATH.'/library/admin/backend.php');
+	
+	//INCLUDE SHORTCODE HANDLER
+	include(UNIX_PIX_SPONSOR_PATH.'/library/output/shortcode.php');
+	
+
+?>

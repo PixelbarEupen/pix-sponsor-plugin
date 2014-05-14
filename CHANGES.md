@@ -1,9 +1,14 @@
 ### Changelog Pix Sponsor Plugin
 
-#### 0.1.1 (14/05/14)
+#### 0.1.2 (14/05/14)
 
-* Added URL Meta-Box
+* filed the scripts in an new structure
+* added new parameters to use within the shortcode (to overwrite default parameters)
+* added a backend option page to set default parameters
+* added cycle script to enable cycling of the sponsors
+* added a small basic CSS file to fix some issues with cycle
 
-#### 0.1 (14/05/14)
+
+#### 0.1 (16/04/14)
 
 * Initial Release of the Plugin
