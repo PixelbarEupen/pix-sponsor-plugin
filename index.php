@@ -5,7 +5,7 @@
 	Author: Adrian Lambertz
 	Description: Erweitert Wordpress um eine Sponsor-Rubrik, in der einzelne Logos inkl. Verknüpfungen zu deren Websites platziert werden können.
 	Plugin URI: https://github.com/PixelbarEupen/pix-sponsor-plugin
-	Version: 0.1.1
+	Version: 0.1.2
 	GitHub Plugin URI: https://github.com/PixelbarEupen/pix-sponsor-plugin
 	GitHub Access Token: 6ca583973da0e33ee1a6c90c3e4920e6143369ca
 	*/
