@@ -3,7 +3,7 @@
 ## Beschreibung
 Dieses Plugin erweitert Wordpress um einen weitere Custom-Post-Type "Banner". Neue Banner können in verschiedene Sektionen (Bannerplätze) aufgeteilt werden (Custom-Taxonomies).
 
-## eingabemöglichkeiten
+## Eingabemöglichkeiten
 Folgende Eingabemöglichkeiten gibt es:
  * Titel
  * URL
@@ -22,5 +22,5 @@ Die Ausgabe erfolgt über den Shortcode `[sponsoren]`. Dieser erlaubt verschiede
  * `number_per_slide` __(Zahl)__ legt fest, wieviele Banner innerhalb eines Slides angezeigt werden sollen. Auch hier bitte das 12er Foundationgrid beachten. Defaultwert kann im Backend festgelegt werden.
  
 ## Standardwerte
-Standardwerte können im Backen unter __Einstellungen__ -> __Sponsoren__ festgelegt werden.
+Standardwerte können im Backend unter __Einstellungen__ -> __Sponsoren__ festgelegt werden.
 
