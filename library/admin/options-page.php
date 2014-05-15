@@ -33,8 +33,8 @@
 					<tr valign="top">
 						<th scope="row">Anzahl Sponsoren</th>
 						<td>
-							<input type="number" value="<?php echo get_option('number_of_sponsors_to_cycle'); ?>" min="1" max="4" name="number_of_sponsors_to_cycle" />
-							<p class="description">Anzahl Sponsoren, die pro Slide angezeigt werden (von einem bis zu 4).</p>
+							<input type="number" value="<?php echo get_option('number_of_sponsors_to_cycle'); ?>" min="1" max="16" name="number_of_sponsors_to_cycle" />
+							<p class="description">Anzahl Sponsoren, die pro Slide angezeigt werden (von einem bis zu 16). Beachte, dass das 12-Grid Layout nicht alle ungeraden Zahlen zulässt (5 Sponsoren wären z.B. nicht möglich)</p>
 						</td>
 					</tr>
 					
@@ -62,14 +62,14 @@
 					<tr valign="top">
 						<th scope="row">Zeige vor und zurück Buttons</th>
 						<td>
-							<input name="cycle_show_pager" type="checkbox" value="true" <?php if ( get_option('cycle_show_pager')) echo 'checked="checked"'; ?> name="cycle-show-pager" />
+							<input name="cycle_show_pager" type="checkbox" value="1" <?php if ( get_option('cycle_show_pager')) echo 'checked="checked"'; ?> name="cycle-show-pager" />
 							<p class="description">Sollen die Pager angezeigt werden? Beachte, dass ein Pager aktiv sein sollte, sobald der Timeout auf 0 gesetzt wurde.</p>
 						</td>
 					</tr>
 					<tr valign="top">
 						<th scope="row">Pause beim Hovern</th>
 						<td>
-							<input name="cycle_pause_on_hover" type="checkbox" value="true" <?php if ( get_option('cycle_pause_on_hover')) echo 'checked="checked"'; ?> name="cycle-pause" />
+							<input name="cycle_pause_on_hover" type="checkbox" value="1" <?php if ( get_option('cycle_pause_on_hover')) echo 'checked="checked"'; ?> name="cycle-pause" />
 							<p class="description">Soll die Slideshow anhalten, sobald mit der Maus über sie gehovert wird?</p>
 						</td>
 					</tr>

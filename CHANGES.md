@@ -1,5 +1,10 @@
 ### Changelog Pix Sponsor Plugin
 
+#### 0.1.3 (15/05/14)
+
+* added a sponsor-widget with same parameters as the shortcode
+* fixed a lot of bugs
+
 #### 0.1.2 (14/05/14)
 
 * filed the scripts in an new structure

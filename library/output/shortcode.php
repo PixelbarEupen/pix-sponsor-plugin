@@ -22,11 +22,36 @@
 		);
 		
 		
-		//SET CORRECT NUMBERS (12 IS THE DEFAUKLT FOUNDATION GRID)
+		//SET CORRECT NUMBERS (12 IS THE DEFAULT FOUNDATION GRID)
 		if($cycle):
-			$large_col = 12/$number_per_slide;
-			$medium_col = 12/$number_per_slide;
-			$small_col = 12/$number_per_slide;
+			switch($number_per_slide){
+				
+				case 2:
+					$large_col = 12/2;
+					$medium_col = 12/2;
+					$small_col = 12/2;
+					break;
+				
+				case 3:
+				case 6:
+				case 9:
+				case 15:
+					$large_col = 12/3;
+					$medium_col = 12/3;
+					$small_col = 12/3;
+					break;
+					
+				case 4:
+				case 8:
+				case 12:
+				case 16:
+					$large_col = 12/4;
+					$medium_col = 12/4;
+					$small_col = 12/4;
+					break;
+					
+				
+			}
 		else:
 			$large_col = 12/$large_col;
 			$medium_col = 12/$medium_col;
@@ -50,15 +75,18 @@
 		/*** DIV WITH PARAMETERS. IF NOT, THE   ***/
 		/*** PRINT DIV WITHOUT PARAMETERS		***/
 		/******************************************/
-		if(get_option('add_cycle')):
+		if($cycle):
 			$output = '<div class="sponsors cycle-slideshow"'; //DIV REMAINS OPEN (BECAUSE THE CYCLE SETTINGS)
 				
 				//SET THE CYCLE OPTIONS
 				$output .= 'data-cycle-fx="'.$animation.'"';
 				$output .= 'data-cycle-slides="> .cycle-divider"';
 				$output .= 'data-cycle-timeout="'.$timeout.'"';
+				if($pause_on_hover):
+					$output .= 'data-cycle-pause-on-hover="'.$pause_on_hover.'"';
+				endif;
 				if($show_pager):
-					$output .= 'data-cycle-pager="#per-slide-template"';
+					$output .= 'data-cycle-pager="#pix_plugin_slider"';
 					$output .= 'data-cycle-prev="#prev"';
 					$output .= 'data-cycle-next="#next"';
 				endif;
@@ -94,7 +122,7 @@
 			
 			
 			//IF CYCLE IS ACTIVATED, CHECK FOR THE DIVIDER
-			if(get_option('add_cycle')):	
+			if($cycle):	
 				$quotient = $i / $number_per_slide;
 				if(is_int($quotient) AND $i != $end):
 					$output .= '</div><div class="cycle-divider">';
@@ -106,7 +134,7 @@
 		endwhile;
 		
 		//IF CYCLE IS ACTIVATED, CLOSE THE .CYCLE-DIVIDER DIV
-		if(get_option('add_cycle')):
+		if($cycle):
 			$output .= '</div>'; //end of cycle-divider
 		endif;
 		

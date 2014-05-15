@@ -24,8 +24,8 @@
 			wp_enqueue_script('jquery');
 						
 			if(get_option('add_cycle')):
-				wp_register_script( 'cycle', HTTP_PIX_SPONSOR_PATH .'/assets/js/cycle.js');
-				wp_enqueue_script( 'cycle' );
+				wp_register_script( 'cycle2', HTTP_PIX_SPONSOR_PATH .'/assets/js/cycle.js');
+				wp_enqueue_script( 'cycle2' );
 			endif;
 		}
 		add_action( 'wp_enqueue_scripts', 'pix_sponsors_register_js', 100 );

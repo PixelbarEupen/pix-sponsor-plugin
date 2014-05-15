@@ -10,6 +10,7 @@ Folgende Eingabemöglichkeiten gibt es:
  * Banner (Bilddatei)
  
 ## Ausgabe
+### Shortcode
 Die Ausgabe erfolgt über den Shortcode `[sponsoren]`. Dieser erlaubt verschiedene Parameter:
  * `platz` __(Name des Bannerplatzes)__ legt fest, von welchem Bannerplatz die Banner ausgegeben werden. Default ist __ALLE__
  * `large_col`, `medium_col`, `small_col` __(Zahl)__ ist spezifisch für das Foundation-Framework und legt fest, wieviele Kolonnen in jeweiligen Breakpoints angezeigt werden. Hier bitte das standard 12-er Grid beachten. Default is __4__.
@@ -20,7 +21,10 @@ Die Ausgabe erfolgt über den Shortcode `[sponsoren]`. Dieser erlaubt verschiede
  * `show_pager` __(bool)__ legt fest, ob Vor- und Zurückpfeile angezeigt werden sollen. Defaultwert kann im Backend festgelegt werden.
  * `pause_on_hover` __(bool)__ legt fest, ob die Slideanimation stoppen soll, wenn man auf die Sponsoren hovert. Defaultwert kann im Backend festgelegt werden. 
  * `number_per_slide` __(Zahl)__ legt fest, wieviele Banner innerhalb eines Slides angezeigt werden sollen. Auch hier bitte das 12er Foundationgrid beachten. Defaultwert kann im Backend festgelegt werden.
- 
+
+### Widget
+Die Sponsoren können ebenfalls über ein Widget ausgegeben werden. Dieses besitzt die gleichen Einstellungsmöglichkeiten wie der Shortcode (in einer UI gepackt.)
+
 ## Standardwerte
 Standardwerte können im Backend unter __Einstellungen__ -> __Sponsoren__ festgelegt werden.
 
