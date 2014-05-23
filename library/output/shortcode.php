@@ -106,7 +106,7 @@
 		while ( $query_banner->have_posts() ): $query_banner->the_post();
 						
 			
-			$img = wp_get_attachment_image_src(get_post_thumbnail_id(),'medium');
+			$img = wp_get_attachment_image_src(get_post_thumbnail_id(),apply_filters('pix_sponsor_output_size','medium'));
 			
 			$output .= '<div class="column large-'.$large_col.' medium-'.$medium_col.' small-'.$small_col.'">';
 				
