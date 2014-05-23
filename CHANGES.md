@@ -1,5 +1,9 @@
 ### Changelog Pix Sponsor Plugin
 
+#### 0.1.3.1 (23/05/14)
+
+*added target blank to links
+
 #### 0.1.3 (15/05/14)
 
 * added a sponsor-widget with same parameters as the shortcode

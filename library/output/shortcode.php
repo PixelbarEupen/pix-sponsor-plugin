@@ -112,7 +112,7 @@
 				
 				$value = get_post_meta( get_the_ID(), '_pix_url', true );
 					
-				if($value) { $output .= '<a  href="'.$value.'" title="'.get_the_title().'">'; }
+				if($value) { $output .= '<a target="_blank" href="'.$value.'" title="'.get_the_title().'">'; }
 				
 					$output .= '<img src="'.$img[0].'" alt="'.get_the_title().'" />';
 				
