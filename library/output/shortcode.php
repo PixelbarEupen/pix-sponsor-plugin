@@ -63,7 +63,8 @@
 		$args = array(
 			'post_type'	=>	'banner',
 			'bannerplatz' => $bannerplatz,
-			'posts_per_page' => $limit
+			'posts_per_page' => $limit,
+			'suppress_filters' => true
 		);
 		$query_banner = new WP_Query( $args );
 		
